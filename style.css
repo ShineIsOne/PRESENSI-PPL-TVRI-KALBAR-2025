@@ -1,0 +1,267 @@
+body {
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #282c34; /* Dark background */
+  color: #e0e0e0; /* Light text color */
+  min-height: 100vh;
+}
+
+header {
+  background: #1e88e5; /* A vibrant blue for the header */
+  color: white;
+  padding: 15px;
+  text-align: center;
+  font-size: 1.4rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+}
+
+main {
+  padding: 20px;
+  max-width: 600px;
+  margin: auto;
+  animation: fadeIn 0.6s ease;
+}
+
+h3 {
+  color: #90caf9; /* Lighter blue for headers */
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: bold;
+  color: #bbdefb;
+}
+
+select, input[type="date"], textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #555; /* Darker border */
+  background: #3a3f47; /* Darker input background */
+  color: #e0e0e0;
+  margin-bottom: 15px;
+  font-size: 0.95rem;
+  transition: 0.2s ease;
+}
+
+select:focus, input[type="date"]:focus, textarea:focus {
+  border-color: #1e88e5; /* Blue focus border */
+  outline: none;
+  box-shadow: 0 0 5px rgba(30,136,229,0.5);
+}
+
+textarea { height: 90px; }
+
+/* Tombol Orang (Tampilan Awal) */
+.grid-orang {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.btn-orang {
+  padding: 25px;
+  border: none;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  background: #3a3f47; /* Dark card background */
+  color: #bbdefb; /* Light blue text */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-orang:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.4);
+  background: #4a4f57; /* Slightly lighter on hover */
+}
+
+.nama-terpilih {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #90caf9;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.info-tanggal {
+  font-size: 1rem;
+  color: #bdbdbd;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Tombol status */
+.pilihan {
+  display: flex;
+  gap: 12px;
+  margin: 15px 0;
+}
+
+.pilihan button {
+  flex: 1;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+  color: white; /* Ensure text is white for status buttons */
+}
+
+.pilihan button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 3px 8px rgba(0,0,0,0.4);
+  opacity: 0.9;
+}
+
+.pilihan button:active {
+  transform: scale(0.95);
+}
+
+.pilihan button.active {
+  border: 2px solid #fff; /* White border for active status */
+  box-shadow: 0 0 10px rgba(255,255,255,0.3);
+}
+
+/* Warna tombol */
+.btn-masuk { background: #4caf50; } /* Green */
+.btn-tidak { background: #f44336; } /* Red */
+.btn-izin { background: #ffeb3b; color: #333; } /* Yellow, dark text for contrast */
+
+/* Aksi */
+.aksi {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 25px;
+}
+
+.btn-simpan, .btn-batal {
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.2s ease, transform 0.1s ease;
+  color: white;
+}
+
+.btn-simpan {
+  background: #1e88e5; /* Blue */
+}
+.btn-simpan:hover { background: #1565c0; transform: translateY(-1px); }
+
+.btn-batal {
+  background: #757575; /* Gray */
+}
+.btn-batal:hover { background: #616161; transform: translateY(-1px); }
+
+/* Card hasil */
+.hasil {
+  margin-top: 30px;
+  background: #3a3f47; /* Dark card background */
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+  animation: slideUp 0.5s ease;
+}
+
+.data-item {
+  border-bottom: 1px solid #555; /* Darker border */
+  padding: 15px 0;
+  display: flex;
+  align-items: flex-start; /* Align icon and text at the top */
+  gap: 15px;
+  position: relative;
+}
+
+.data-item:last-child {
+  border-bottom: none;
+}
+
+.data-item .item-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #1e88e5; /* Blue background for icon */
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+  flex-shrink: 0; /* Prevent icon from shrinking */
+}
+
+.data-item .item-content {
+  flex-grow: 1;
+}
+
+.data-item h4 {
+  margin: 0 0 8px 0;
+  color: #bbdefb;
+  font-size: 1.1rem;
+}
+
+.data-item p {
+  margin: 4px 0 0 0;
+  font-size: 0.95rem;
+  color: #bdbdbd;
+  line-height: 1.5;
+}
+
+.data-item p strong {
+  color: #e0e0e0;
+}
+
+/* Status specific styling in data-item */
+.data-item .status-masuk { color: #81c784; } /* Lighter green */
+.data-item .status-tidak { color: #ef9a9a; } /* Lighter red */
+.data-item .status-izin { color: #fff176; } /* Lighter yellow */
+
+
+/* Animasi */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+  .grid-orang {
+    grid-template-columns: 1fr; /* Stack buttons on smaller screens */
+  }
+  .pilihan {
+    flex-direction: column; /* Stack status buttons */
+  }
+  .aksi {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .btn-simpan, .btn-batal {
+    width: 100%;
+  }
+}

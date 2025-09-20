@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Absensi & Logbook PPL</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <span>📅</span> Absensi & Logbook PPL
+  </header>
+
+  <main>
+    <div class="pilih-orang" id="pilih-orang-section">
+      <h3>Pilih Anggota</h3>
+      <div class="grid-orang">
+        <button class="btn-orang" onclick="pilihOrang('Orang 1')">Orang 1</button>
+        <button class="btn-orang" onclick="pilihOrang('Orang 2')">Orang 2</button>
+        <button class="btn-orang" onclick="pilihOrang('Orang 3')">Orang 3</button>
+        <button class="btn-orang" onclick="pilihOrang('Orang 4')">Orang 4</button>
+        <button class="btn-orang" onclick="pilihOrang('Orang 5')">Orang 5</button>
+        <button class="btn-orang" onclick="pilihOrang('Orang 6')">Orang 6</button>
+      </div>
+    </div>
+
+    <div id="form-content" style="display:none;">
+      <p id="orang-terpilih" class="nama-terpilih"></p>
+
+      <div class="pilih-tanggal">
+        <label for="tanggal">Pilih Tanggal:</label>
+        <input type="date" id="tanggal" onchange="tampilkanTanggal()">
+        <p id="tanggal-terpilih" class="info-tanggal"></p>
+      </div>
+
+      <div class="status-form">
+        <h3>Status Kehadiran</h3>
+        <div class="pilihan">
+          <button class="btn-masuk" onclick="pilihStatus('Masuk')">✅ Masuk</button>
+          <button class="btn-tidak" onclick="pilihStatus('Tidak Masuk')">❌ Tidak Masuk</button>
+          <button class="btn-izin" onclick="pilihStatus('Izin')">📝 Izin</button>
+        </div>
+
+        <div id="form-logbook" style="display:none;">
+          <label>Logbook:</label>
+          <textarea id="logbook"></textarea>
+        </div>
+
+        <div id="form-alasan" style="display:none;">
+          <label>Alasan:</label>
+          <textarea id="alasan"></textarea>
+        </div>
+
+        <div class="aksi">
+          <button class="btn-batal" onclick="resetForm()">Batal</button>
+          <button class="btn-simpan" onclick="simpanData()">Simpan</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="hasil" id="hasil-section" style="display:none;">
+      <h3>Data Tersimpan</h3>
+      <div id="data-list-container"></div>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
