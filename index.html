@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Presensi PPL TVRI Kalbar 2025</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <button id="btn-kembali" class="btn-kembali" style="display:none;">&lt;</button>
+    <span>📅</span> Presensi PPL TVRI Kalbar 2025
+  </header>
+
+  <main>
+    <div class="pilih-orang" id="pilih-orang-section">
+      <h3>Pilih Anggota</h3>
+      <div class="grid-orang">
+        <button class="btn-orang" onclick="pilihOrang('Ikhsan Gunawan')">Ikhsan Gunawan</button>
+        <button class="btn-orang" onclick="pilihOrang('Miftahul Khoiri Hafizi')">Miftahul Khoiri Hafizi</button>
+        <button class="btn-orang" onclick="pilihOrang('Siska')">Siska</button>
+        <button class="btn-orang" onclick="pilihOrang('Luthfiatin Nasyroh')">Luthfiatin Nasyroh</button>
+        <button class="btn-orang" onclick="pilihOrang('Monallisa')">Monallisa</button>
+        <button class="btn-orang" onclick="pilihOrang('Dimas Kafaniyal Kafi')">Dimas Kafaniyal Kafi</button>
+      </div>
+    </div>
+
+    <div id="form-content-container" style="display:none;">
+      <div id="form-content">
+        <p id="orang-terpilih" class="nama-terpilih"></p>
+
+        <div class="pilih-tanggal">
+          <label for="tanggal">Pilih Tanggal:</label>
+          <input type="date" id="tanggal" onchange="tampilkanTanggal()">
+          <p id="tanggal-terpilih" class="info-tanggal"></p>
+        </div>
+
+        <div class="status-form">
+          <h3>Status Kehadiran</h3>
+          <div class="pilihan">
+            <button class="btn-masuk" onclick="pilihStatus('Masuk')">✅ Masuk</button>
+            <button class="btn-tidak" onclick="pilihStatus('Tidak Masuk')">❌ Tidak Masuk</button>
+            <button class="btn-izin" onclick="pilihStatus('Izin')">📝 Izin</button>
+          </div>
+
+          <div id="form-logbook" style="display:none;">
+            <label>Logbook:</label>
+            <textarea id="logbook"></textarea>
+          </div>
+
+          <div id="form-alasan" style="display:none;">
+            <label>Alasan:</label>
+            <textarea id="alasan"></textarea>
+          </div>
+
+          <div class="aksi">
+            <button class="btn-batal" onclick="resetForm()">Batal</button>
+            <button id="btn-aksi" class="btn-simpan" onclick="simpanData()">Simpan</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="data-tersimpan-header" id="data-tersimpan-header" style="display:none;">
+      <h3>Data Tersimpan</h3>
+    </div>
+    
+    <div class="hasil" id="hasil-section" style="display:none;">
+      <div id="data-list-container"></div>
+    </div>
+  </main>
+
+  <div id="konfirmasi-hapus-modal" class="modal-overlay" style="display: none;">
+    <div class="modal-content">
+      <h3 class="modal-title">Konfirmasi Tindakan</h3>
+      <p id="modal-text">Apakah Anda yakin ingin menghapus data ini?</p>
+      <div class="modal-actions">
+        <button id="modal-btn-batal" class="btn-batal">Batal</button>
+        <button id="modal-btn-konfirmasi" class="btn-hapus">Ya, Hapus</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="loader" class="loader-overlay" style="display: none;">
+    <div class="spinner"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
